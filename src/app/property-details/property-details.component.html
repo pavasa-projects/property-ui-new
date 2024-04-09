@@ -1,0 +1,120 @@
+<main>
+
+
+  <!-- Hero -->
+
+
+  <div class="section" *ngIf="property">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <!-- Tab -->
+          <nav>
+            <div class="nav nav-tabs flex-column flex-md-row border-light border-success text-primary mb-3" id="nav-tab"
+                 role="tablist">
+              <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" [routerLink]="['about']" [routerLinkActive]="['active']"
+                 role="tab" aria-controls="nav-about" aria-selected="true"><span class="far fa-address-card mr-2"></span>About</a>
+              <a class="nav-item nav-link" id="nav-amenities-tab" data-toggle="tab" [routerLink]="['amenities']" [routerLinkActive]="['active']"
+                 role="tab" aria-controls="nav-amenities" aria-selected="false"><span class="fas fa-cubes mr-2"></span>Amenities</a>
+              <a class="nav-item nav-link" id="nav-location-tab" data-toggle="tab" [routerLink]="['location']" [routerLinkActive]="['active']"
+                 role="tab" aria-controls="nav-location" aria-selected="false"><span class="fas fa-map-marker-alt mr-2"></span>Location</a>
+            </div>
+          </nav>
+          <!-- About Tab -->
+          <div class="tab-content mt-2 mb-3" id="nav-tabContent">
+            <router-outlet></router-outlet>
+
+          </div>
+          <!-- End of tab -->
+        </div>
+
+
+
+        <aside class="col-12 col-lg-2 mt-3 mt-lg-0 pl-0 pr-0">
+          <div class="card border-light p-3">
+            <ul class="list-group font-weight-bold list-group-flush">
+              <li class="list-group-item border-light">
+                <span class="font-weight-normal">Monthly Rent</span>
+                <div class="font-weight-bold pt-1"> <span class="fas fa-rupee-sign mr-2"></span>{{property.monthlyRent | number}}</div>
+              </li>
+              <li class="list-group-item border-light">
+                <span class="font-weight-normal">Carpet Area</span>
+                <div class="font-weight-bold pt-1" >{{property.carpetArea}} Sq.Ft</div>
+              </li>
+              <li class="list-group-item border-light">
+                <div class="font-weight-normal">Deposit</div>
+                <div class="font-weight-bold pt-1"><span class="fas fa-rupee-sign mr-2"></span>{{property.securityAmount | number}}</div>
+              </li>
+              <li class="list-group-item border-light">
+                <span class="font-weight-normal">Available From</span>
+                <div class="font-weight-bold pt-1">15-May-TODO</div>
+              </li>
+              <li class="list-group-item ">
+                <span class="font-weight-normal">Bedrooms</span>
+                <div class="font-weight-bold pt-1">{{property.noOfBedrooms}}</div>
+              </li>
+              <li class="list-group-item  border-light">
+                <span class="font-weight-normal">Bathrooms</span>
+                <div class="font-weight-bold pt-1">{{property.noOfBathrooms}}</div>
+              </li>
+
+
+
+            </ul>
+          </div>
+          <div class="card border-light  pl-3 pt-2" >
+            <!-- Button Modal -->
+            <button type="button" class="btn btn-block btn-secondary mb-3" data-toggle="modal"
+                    data-target="#modal-form">Contact Owner</button>
+
+          </div>
+
+
+
+        </aside>
+
+        <aside class="col-12 col-lg-2 mt-3 mt-lg-0 pl-0 pr-0">
+          <div class="card border-light p-3">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-light">
+                <span>Furnishing</span>
+                <div class="font-weight-bold pt-1">{{property.furnishingStatus}}</div>
+              </li>
+              <li class="list-group-item border-light">
+                <span>Parking</span>
+                <div class="font-weight-bold pt-1" *ngIf="property.noOfCoveredParking">{{property.noOfCoveredParking}} Covered</div>
+                <div class="font-weight-bold pt-1" *ngIf="property.noOfOpenParking">{{property.noOfOpenParking}} Opened</div>
+              </li>
+              <li class="list-group-item border-light">
+                <div>Tenants</div>
+                <div class="font-weight-bold pt-1">{{property.preferredTenantType}}</div>
+              </li>
+              <li class="list-group-item border-light">
+                <span>Floor</span>
+                <div class="font-weight-bold pt-1">{{property.floorNo}} (total: {{property.totalFloors}})</div>
+              </li>
+              <li class="list-group-item ">
+                <span>Balconies</span>
+                <div class="font-weight-bold pt-1">{{property.noOfBalconies}}</div>
+              </li>
+              <li class="list-group-item  border-light">
+                <span>Water supply</span>
+                <div class="font-weight-bold pt-1">24 Hrs- TODO</div>
+              </li>
+
+
+
+            </ul>
+          </div>
+
+
+
+        </aside>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- End of section -->
+</main>

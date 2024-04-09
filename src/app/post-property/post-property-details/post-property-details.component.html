@@ -1,0 +1,126 @@
+<main>
+
+  <div class="section bg-soft">
+    <div class="container">
+      <div class="row pt-5 pt-lg-3">
+        <div class="col-12 col-lg-10">
+
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form"
+                class="card border-light p-4 p-lg-5 mb-4">
+            <h3>Step 1: Property Details</h3>
+            <p class="lead ">Tell us about your property.</p>
+            <div class="row">
+              <div class="col-12 col-lg-7">
+                <div class="form-group pt-4">
+                  <label for="projectName">Project Name</label>
+                  <div class="input-group">
+                    <input class="form-control" id="projectName" placeholder="Enter Project Name"
+                           type="text" formControlName="projectName">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.projectName">
+                    {{displayMessage.projectName}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="typeOfProperty">Property Type</label>
+                  <select class="form-control" id="typeOfProperty" formControlName="subTypeOfProperty" (blur)="blur()"  [ngClass]="{'has-error': displayMessage.subTypeOfProperty}">
+                    <option value="" disabled>Select Property Type</option>
+                    <option value="" disabled class="bg-soft">Residential Properties</option>
+                    <option *ngFor="let residentialType of CONSTANTS.residentialPropertyTypeList"
+                            [ngValue]="residentialType">{{residentialType}}</option>
+                    <option value="" disabled class="bg-soft">Commercial Properties</option>
+                    <option *ngFor="let commercialType of CONSTANTS.commercialPropertyTypeList"
+                            [ngValue]="commercialType.item_text">{{commercialType.item_text}}</option>
+                  </select>
+                  <div class="text-danger" *ngIf="displayMessage.subTypeOfProperty">
+                    {{displayMessage.subTypeOfProperty}}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="totalNoOfUnits">Total No of units</label>
+                  <div class="input-group">
+                    <input class="form-control" id="totalNoOfUnits" placeholder="Enter Total no of units in project"
+                           type="text" formControlName="totalNoOfUnits">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.totalNoOfUnits">
+                    {{displayMessage.totalNoOfUnits}}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="totalNoOfTowers">Total No of Towers</label>
+                  <div class="input-group ">
+                    <input class="form-control" id="totalNoOfTowers" placeholder="Enter Total no of towers"
+                           type="text" formControlName="totalNoOfTowers">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.totalNoOfTowers">
+                    {{displayMessage.totalNoOfTowers}}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="towerNumber">Tower Number/Name</label>
+                  <div class="input-group">
+                    <input class="form-control" id="towerNumber" placeholder="Tower number/name"
+                           type="text" formControlName="towerNumber">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.towerNumber">
+                    {{displayMessage.towerNumber}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="typeOfProperty">Total Floors</label>
+                  <select class="form-control" id="totalFloors" formControlName="totalFloors">
+                    <option value="" disabled>Select Floor</option>
+                    <option *ngFor="let floorNo of CONSTANTS.floorNumbers"
+                            [ngValue]="floorNo">{{floorNo}}</option>
+                  </select>
+                  <div class="text-danger" *ngIf="displayMessage.totalFloors">
+                    {{displayMessage.totalFloors}}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="totalProjectArea">Total Project Area (in acres)</label>
+                  <div class="input-group">
+                    <input class="form-control" id="totalProjectArea" placeholder="Total Project Area (in acres)"
+                           type="text" formControlName="totalProjectArea">
+                  </div>
+                  <div class="text-danger" *ngIf="displayMessage.totalProjectArea">
+                    {{displayMessage.totalProjectArea}}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="possessionDate">Possession Date</label>
+
+                  <div class="input-group mb-lg-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
+                    </div>
+                    <input class="form-control datepicker" id="possessionDate" [(ngModel)]="dateModel"
+                           [ngModelOptions]="{standalone: true}" ngbDatepicker
+                           #d="ngbDatepicker" (click)="d.toggle()" placeholder="DD/MM/YYYY" type="text"
+                           data-position="top">
+                  </div>
+
+                </div>
+
+                <div class="form-group pt-4">
+                  <button class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                          type="submit">Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

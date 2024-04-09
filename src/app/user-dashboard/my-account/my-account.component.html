@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-body bg-white border-light mb-4">
+
+      <p class="font-weight-bold" style="color: #006400"><i class="fas fa-check-circle fa-lg" style="color: #006400"></i><span class="pl-2">Details updated successfully</span></p>
+      <h2 class="h5 mb-2 mt-1">General information</h2>
+      <form>
+
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <div class="form-group pt-4">
+              <label for="yourName">Your Name</label>
+              <div class="input-group mb-4">
+                <input class="form-control" ngbAutofocus id="yourName" value="Rakesh Kavitake"
+                       type="text" aria-label="your name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number</label>
+              <div class="input-group mb-4">
+                <input class="form-control" ngbAutofocus id="mobileNumber" value="8007364010"
+                       type="text" aria-label="your name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="emailId">Email Id</label>
+              <div class="input-group mb-4">
+                <input class="form-control" ngbAutofocus id="emailId" value="rakesh.kavitake@gmail.com"
+                       type="text" aria-label="your name">
+              </div>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between pl-0 border-bottom">
+                <div>
+                  <h3 class="h6 mb-1">Show Mobile Number on portal</h3>
+                  <span class="font-small font-weight-normal">It will show your mobile number on portal so potential customers can directly connect with you.</span>
+                </div>
+                <div>
+                  <div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input"
+                                                                   id="shop-notification-1" checked="checked"> <label
+                    class="custom-control-label" for="shop-notification-1"></label></div>
+                </div>
+              </li>
+            </ul>
+
+
+            <div class="form-group pt-4">
+              <button [routerLink]="['/post-property-more-details']"
+                      class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                      type="submit">Update
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+
+  </div>
+</div>
+

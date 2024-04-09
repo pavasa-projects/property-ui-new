@@ -1,0 +1,72 @@
+<main>
+  <section class="section section-header section-image bg-primary overlay-primary text-white pb-4 pb-md-6"
+           data-background="/assets/img/loft.jpg" style="background-image: url('/assets/img/loft.jpg')">
+    <form autocomplete="off" [formGroup]="form" class="property-search">
+      <div class="container">
+        <div class="row justify-content-center mb-4 mb-xl-5">
+          <div class="col-12 col-xl-10 text-center">
+            <!-- Heading -->
+            <h1 class="display-2">
+              Find your new property.
+            </h1>
+            <!-- Text -->
+            <p class="lead text-muted mt-2 px-md-6">
+              Discover and reserve property today.
+            </p>
+          </div>
+
+          <div class="col-12 col-xl-10">
+            <div class=" p-md-2">
+
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-10">
+            <div class="card p-md-2">
+              <div class="card-body p-2 p-md-0">
+                <div class="row">
+                  <div class="col-12 col-lg-9">
+                    <div class="form-group form-group-lg mb-lg-0">
+                      <app-autocomplete-location></app-autocomplete-location>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-3">
+                    <button class="btn btn-lg btn-primary btn-block animate-up-2" type="submit"
+                            [routerLink]="['/search-result']">Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+  <section class="section pb-lg-6 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 text-center mb-4 mb-md-0 px-lg-4">
+          <img class="img-fluid image-lg mb-4" src="../assets/img/illustrations/easy-transaction.svg"
+               alt="northwestern logo">
+          <h2 class="h4">Extraordinarily easy</h2>
+          <p>Our search makes it verry simple to find your space. And from office match, we are here to help you.</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 text-center mb-4 mb-md-0 px-lg-4">
+          <img class="img-fluid image-lg mb-4" src="../assets/img/illustrations/support.svg" alt="northwestern logo">
+          <h2 class="h4">Truly transparent</h2>
+          <p>We give you all this info, lifting the lid on actual offices, real availability, and accurate pricing.</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 text-center mb-4 mb-md-0 px-lg-4">
+          <img class="img-fluid image-lg mb-4" src="../assets/img/illustrations/payment.svg" alt="northwestern logo">
+          <h2 class="h4">Best prices</h2>
+          <p>Choose Spaces and our experts will save you around 15% off the list price. What are you waiting for?</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
