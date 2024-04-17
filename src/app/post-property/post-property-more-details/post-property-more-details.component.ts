@@ -6,6 +6,8 @@ import {Store} from "@ngrx/store";
 import {Router} from "@angular/router";
 import {NgbDatepickerConfig, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 import {FormComponent} from "../../common/form/form.component";
+import {faPersonWalking, faSwimmingPool} from "@fortawesome/free-solid-svg-icons";
+import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
 @Component({
   selector: 'app-post-property-more-details',
@@ -14,6 +16,9 @@ import {FormComponent} from "../../common/form/form.component";
 })
 export class PostPropertyMoreDetailsComponent extends FormComponent implements OnInit {
   dateModel: NgbDateStruct;
+  selectedIcons: string[] = [];
+
+
 
   constructor(private fb: FormBuilder, private router: Router,
               private config: NgbDatepickerConfig, store: Store<AppState>,
@@ -29,11 +34,6 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
 
   override initFormFields(): void {
     this.form = this.fb.group({
-      carpetArea: ['', [Validators.required]],
-      preferredTenantType: ['', [Validators.required]],
-      furnishingStatus: ['', [Validators.required]],
-      furnishingDetails: new FormArray([], [Validators.required]),
-      amenities: new FormArray([], [Validators.required]),
     });
   }
 
@@ -41,23 +41,28 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
     this.router.navigateByUrl('/post-property-photos');
   }
 
-  // @ts-ignore
-  onCheckboxChange(formArrName, e): void {
-    const checkArray: FormArray = this.form.get(formArrName) as FormArray;
 
-    if (e.target.checked) {
-      checkArray.push(new FormControl(e.target.value));
-    } else {
-      let i = 0;
+  onIconSelected(selectedIcon: string) {
+    console.log("selecte --- "+ selectedIcon)
+    const index = this.selectedIcons.findIndex(icon => icon ==selectedIcon);
+    console.log(index);
+    // console.log("before --"+ this.selectedIcons);
+    if (index === -1) {
       // @ts-ignore
-      checkArray.controls.forEach((item: FormControl) => {
-        if (item.value === e.target.value) {
-          checkArray.removeAt(i);
-          return;
-        }
-        i++;
-      });
+      this.selectedIcons.push(selectedIcon);
+    } else {
+      this.selectedIcons.splice(index, 1);
     }
+    console.log(this.selectedIcons);
   }
 
+
+
+  validateSelection() {
+    if (this.selectedIcons.length > 0) {
+      this.form.controls['icons'].setErrors(null);
+    } else {
+      this.form.controls['icons'].setErrors({ 'required': true });
+    }
+  }
 }

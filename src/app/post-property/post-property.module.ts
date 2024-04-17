@@ -15,11 +15,13 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
 import {NgbInputDatepicker, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgxGpAutocompleteModule} from "@angular-magic/ngx-gp-autocomplete";
 import {YouTubePlayerModule} from "@angular/youtube-player";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {SelectableIconComponent} from "../common/selectable-icon/selectable-icon.component";
 
 
 
 @NgModule({
-  declarations: [PostPropertyDetailsComponent, PostPropertyFurnishingComponent, PostPropertyLocationComponent, PostPropertyMoreDetailsComponent, PostPropertyPhotosComponent, PostPropertyPricingPlanComponent, PostPropertyRentComponent, ThankYouComponent],
+  declarations: [PostPropertyDetailsComponent, PostPropertyFurnishingComponent, PostPropertyLocationComponent, PostPropertyMoreDetailsComponent, PostPropertyPhotosComponent, PostPropertyPricingPlanComponent, PostPropertyRentComponent, ThankYouComponent, SelectableIconComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature('property', propertyReducer),
@@ -30,7 +32,8 @@ import {YouTubePlayerModule} from "@angular/youtube-player";
     NgxGpAutocompleteModule,
     NgbModule,
     YouTubePlayerModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FontAwesomeModule
   ]
 })
 export class PostPropertyModule { }

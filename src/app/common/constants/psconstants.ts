@@ -1,3 +1,12 @@
+import {
+  faElevator, faFolderTree,
+  faHouse,
+  faLifeRing,
+  faPersonWalking, faPizzaSlice, faPlayCircle, faRestroom,
+  faSwimmingPool, faTree, faTreeCity,
+  faUserShield
+} from "@fortawesome/free-solid-svg-icons";
+
 export const PS_CONSTANTS = {
   propertyTypeList: ['Residential', 'Commercial'],
   dropdownList: [
@@ -37,16 +46,13 @@ export const PS_CONSTANTS = {
   budgets: [...Array(150)].map((_, i) => (i + 1) * 5000),
 
   amenities: [
-    'Lift',
-    'Gym',
-    'Garden',
-    'Club House',
-    'Swimming Pool',
-    'Jogging Track',
-    'Security',
-    'CCTV Camera',
-    'Wi-Fi Connectivity',
-    'Intercom',
+    {icon: faTree, icon_text: "Park"},
+    {icon: faRestroom, icon_text: "Rest room"},
+    {icon: faHouse, icon_text: "Club"},
+    {icon: faElevator, icon_text: "Lift"},
+    {icon: faUserShield, icon_text: "Security"},
+    {icon: faPersonWalking, icon_text: "Jogging Track"},
+    {icon: faSwimmingPool, icon_text: "Swimming Pool"}
   ],
 
   furnishings: [

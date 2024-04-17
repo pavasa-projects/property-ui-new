@@ -1,0 +1,24 @@
+.selected {
+  border: 2px solid #FFCC54; /* Example: Change border color to indicate selection */
+}
+
+.selected-text {
+  color: blue; /* Change the color to your desired color */
+}
+
+.icon-with-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.icon-with-text i {
+  font-size: 2em; /* Adjust the icon size as needed */
+}
+
+.icon-with-text span {
+  font-size: 1em;
+  align-content: center;
+
+}

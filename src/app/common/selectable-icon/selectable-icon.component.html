@@ -1,0 +1,4 @@
+<div (click)="toggleSelection()"  class="icon-with-text">
+  <fa-icon [icon]="icon" style="color: #0b7bbf" size="3x" [border]="true" [fixedWidth]="true" [ngClass]="{'selected': isSelected}"></fa-icon>
+  <span [ngClass]="{'selected-text': isSelected}">{{ inlineText }}</span>
+</div>

@@ -1,0 +1,18 @@
+.icon-container {
+  /*display: grid;*/
+  /*grid-auto-flow: column; !* Arrange icons in a single row *!*/
+  /*gap: 10px;*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust column width as needed */
+  grid-gap: 20px;
+  /* Adjust spacing between icons as needed */
+}
+
+.icon-container app-selectable-icon {
+  /*padding: 0 1px; !* Horizontal padding *!*/
+  box-sizing: border-box;
+}
+
+.icon-container .text {
+   /* Prevent text from wrapping */
+}

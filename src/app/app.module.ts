@@ -30,6 +30,8 @@ import { PropertyAboutComponent } from './property-details/property-about/proper
 import { PropertyAmenitiesComponent } from './property-details/property-amenities/property-amenities.component';
 import { PropertyLocationComponent } from './property-details/property-location/property-location.component';
 import {YouTubePlayerModule} from "@angular/youtube-player";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 @NgModule({
@@ -64,14 +66,15 @@ import {YouTubePlayerModule} from "@angular/youtube-player";
     NgbModule,
     NgxGpAutocompleteModule,
     NgMultiSelectDropDownModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    FontAwesomeModule
 
   ],
   providers: [
     {
       provide: Loader,
       useValue: new Loader({
-        apiKey: 'AIzaSyAgxFG5p5bsAOnd9iB5Q-R-8OLarR2ZlAM',
+        apiKey: 'AIzaSyB9Jo_GOOxAAPND2Q91vFOao2oLmY_7wfc',
         libraries: ['places']
       })
     },
