@@ -1,0 +1,104 @@
+<main>
+
+  <div class="section bg-soft">
+    <div class="container">
+      <div class="row pt-5 pt-lg-3">
+        <div class="col-12 col-lg-10">
+          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form"
+                class="card border-light p-4 p-lg-5 mb-4">
+            <div class="form-group ">
+              <a [routerLink]="['/post-property-location']" class="text-secondary font-small">
+                <fa-icon [icon]="faArrowLeft"></fa-icon>
+                <span class="pl-3 fa-lg font-weight-bold">Back</span>
+              </a>
+            </div>
+            <h3>Step 3: Unit Configuration</h3>
+            <p class="lead ">Add multiple unit types by clicking Add more units link</p>
+            <div class="row">
+              <div class="col-12 col-lg-7">
+                <ng-container formArrayName="inputsArray">
+                  <ng-container *ngFor="let group of inputsArray.controls; let i = index" [formGroupName]="i">
+                    <p>Unit configuration {{i + 1}}
+                      <a *ngIf="i >= 1" class="text-secondary font-small" (click)="removeFields(i)">
+                        <fa-icon [icon]="faMinusCircle"></fa-icon>
+                        <span>Delete Unit</span>
+                      </a>
+                    </p>
+
+                    <div class="form-group">
+                      <label for="unitType_{{ i }}">Unit Type:</label>
+                      <select class="form-control" id="unitType_{{ i }}" formControlName="unitType">
+                        <option value="" disabled>Select Unit type</option>
+                        <option *ngFor="let unitType of CONSTANTS.unitTypes"
+                                [ngValue]="unitType">{{unitType}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="carpetArea1_{{ i }}">Carpet Area:</label>
+                      <div class="grid-container">
+                        <select class="form-control" id="carpetArea_{{ i }}" formControlName="carpetArea1">
+                          <option value="" disabled>Carpet area from</option>
+                          <option *ngFor="let carpetArea1 of CONSTANTS.carpetAreas"
+                                  [ngValue]="carpetArea1">{{carpetArea1}}</option>
+                        </select>
+
+                        <select class="form-control" id="carpetArea2_{{ i }}" formControlName="carpetArea2">
+                          <option value="" disabled>Carpet area to</option>
+                          <option *ngFor="let carpetArea of CONSTANTS.carpetAreas"
+                                  [ngValue]="carpetArea">{{carpetArea}}</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="price1_{{ i }}">Price range:</label>
+                      <div class="grid-container">
+                        <select class="form-control" id="price1_{{ i }}" formControlName="price1">
+                          <option value="" disabled>Price from</option>
+                          <option *ngFor="let carpetArea of CONSTANTS.budgets"
+                                  [ngValue]="carpetArea">{{carpetArea}}</option>
+                        </select>
+
+                        <select class="form-control" id="price2_{{ i }}" formControlName="price2">
+                          <option value="" disabled>Price to</option>
+                          <option *ngFor="let carpetArea of CONSTANTS.budgets"
+                                  [ngValue]="carpetArea">{{carpetArea}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="floorPlan_{{ i }}">Upload Floor plan</label>
+                      <div class="input-group">
+                        <input type="text" placeholder="Upload floor plan" class="form-control" id="floorPlan_{{ i }}"
+                               formControlName="floorPlan">
+                      </div>
+
+                    </div>
+
+                    <hr *ngIf="i !== inputsArray.length - 1">
+                  </ng-container>
+
+                </ng-container>
+                <div>
+                  <a class="text-secondary font-small align-content-end" (click)="addFields()">
+                    <fa-icon [icon]="faPlusCircle"></fa-icon>
+                    <span>Add More Units</span>
+
+                  </a>
+                </div>
+
+                <div class="form-group pt-4">
+                  <button class="btn-lg btn-block btn-secondary mt-2 animate-up-2"
+                          type="submit">Next
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

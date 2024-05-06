@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {PostPropertyComponent} from "./post-property/post-property.component";
 import {PostPropertyDetailsComponent} from "./post-property/post-property-details/post-property-details.component";
 import {PostPropertyLocationComponent} from "./post-property/post-property-location/post-property-location.component";
-import {PostPropertyRentComponent} from "./post-property/post-property-rent/post-property-rent.component";
 import {
   PostPropertyMoreDetailsComponent
 } from "./post-property/post-property-more-details/post-property-more-details.component";
@@ -22,6 +21,9 @@ import {PropertyDetailsResolve} from "./property-details/resolver/property-detai
 import {PropertyAboutComponent} from "./property-details/property-about/property-about.component";
 import {PropertyAmenitiesComponent} from "./property-details/property-amenities/property-amenities.component";
 import {PropertyLocationComponent} from "./property-details/property-location/property-location.component";
+import {
+  PostPropertyUnitConfigurationComponent
+} from "./post-property/post-property-unit-configuration/post-property-unit-configuration.component";
 
 const routes: Routes = [
   {path: 'property-search', component: PropertySearchComponent},
@@ -38,9 +40,10 @@ const routes: Routes = [
     ]
   },
   {path: 'post-property', component: PostPropertyComponent},
+
   {path: 'post-property-details', component: PostPropertyDetailsComponent},
   {path: 'post-property-location', component: PostPropertyLocationComponent},
-  {path: 'post-property-rent', component: PostPropertyRentComponent},
+  {path: 'post-property-unit-configuration', component: PostPropertyUnitConfigurationComponent},
   {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
   {path: 'post-property-photos', component: PostPropertyPhotosComponent},
   {path: 'post-property-pricing-plan', component: PostPropertyPricingPlanComponent},

@@ -16,6 +16,10 @@ export const PS_CONSTANTS = {
     {item_id: 4, item_text: '4 BHK'},
     {item_id: 5, item_text: '4+ BHK'}
   ],
+  unitTypes: [
+    '1 BHK', '2 BHK', '3 BHK', '4 BHK', '4+ BHK'
+  ],
+  carpetAreas: [...Array(100)].map((_, i) => (i + 1) * 100),
   dropdownSettings: {
     singleSelection: false,
     idField: 'item_id',

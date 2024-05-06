@@ -1,4 +1,8 @@
 export const VALIDATION_MSG = {
+  input1: {
+    required: 'Please enter project name.',
+    pattern: 'Please enter your valid project name.'
+  },
   projectName: {
     required: 'Please enter project name.',
     pattern: 'Please enter your valid project name.'

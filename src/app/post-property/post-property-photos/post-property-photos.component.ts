@@ -31,7 +31,7 @@ export class PostPropertyPhotosComponent implements OnInit {
   }
 
   navigateNextPageOnSuccess(): void {
-    this.router.navigateByUrl('/post-property-pricing-plan');
+    this.router.navigateByUrl('/thank-you');
   }
 
   ngOnInit(): void {
@@ -51,7 +51,7 @@ export class PostPropertyPhotosComponent implements OnInit {
       this.apiLoaded = true;
     }
   }
-  
+
   upload(event: any): void {
     this.selectedFiles = event.target.files;
     this.progress = 0;

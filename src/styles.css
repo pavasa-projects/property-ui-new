@@ -2822,7 +2822,7 @@ pre code {
   /*height: calc(1.5em + 1.2625rem); existing*/
   height: 2.625rem;
   padding: 0 0.15rem;
-  font-size: 1.125rem !important;
+  font-size: 0.825rem !important;
   line-height: 1.5;
   color: #424767;
   background-color: #ffffff;
@@ -40560,3 +40560,12 @@ list-group.lis.display-block {
   border-bottom-color: #be2837 !important;
 }
 
+.grid-container {
+  /*display: grid;*/
+  /*grid-auto-flow: column; !* Arrange icons in a single row *!*/
+  /*gap: 10px;*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust column width as needed */
+  grid-gap: 20px;
+  /* Adjust spacing between icons as needed */
+}

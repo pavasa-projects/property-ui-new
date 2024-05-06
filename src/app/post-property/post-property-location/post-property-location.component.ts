@@ -36,7 +36,7 @@ export class PostPropertyLocationComponent extends FormComponent {
   }
 
   navigateNextPageOnSuccess(): void {
-    this.router.navigateByUrl('/post-property-rent');
+    this.router.navigateByUrl('/post-property-unit-configuration');
   }
 
   manualAddress(): void {
