@@ -4,7 +4,6 @@ import {Store} from "@ngrx/store";
 import {AppState} from "../../state/app.state";
 import {Router} from "@angular/router";
 import {FormComponent} from "../../common/form/form.component";
-import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 
 
 @Component({
@@ -13,7 +12,6 @@ import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./post-property-details.component.css']
 })
 export class PostPropertyDetailsComponent extends FormComponent implements OnInit, OnDestroy {
-  dateModel: NgbDateStruct;
   constructor(private fb: FormBuilder, store: Store<AppState>, private router: Router,
                el: ElementRef) {
     super(store);
@@ -27,7 +25,9 @@ export class PostPropertyDetailsComponent extends FormComponent implements OnIni
       totalNoOfTowers: ['', [Validators.required]],
       towerNumber: ['', [Validators.required]],
       totalFloors: ['', [Validators.required]],
-      totalProjectArea: ['', [Validators.required]]
+      totalProjectArea: ['', [Validators.required]],
+      possessionDateMonth: ['', Validators.required],
+      possessionDateYear: ['', Validators.required],
 
     });
 

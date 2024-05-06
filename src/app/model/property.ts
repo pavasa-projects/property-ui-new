@@ -1,18 +1,31 @@
 export interface Property {
   id: string;
+  // property details
+  possessionDateMonth: string;
+  possessionDateYear: number;
+  projectName: string;
+  subTypeOfProperty: string;
+  totalFloors: number;
+  totalNoOfTowers: number;
+  totalNoOfUnits: number;
+  totalProjectArea: number;
+  towerNumber: number;
+
   // location
   propertyLocation: string;
   lat: number;
   lng: number;
   societyName: string;
 
+  //unit configuration
+  unitConfigurations: UnitConfiguration[];
+
+
   // property details
-  subTypeOfProperty: string;
   noOfBedrooms: number;
   noOfBalconies: number;
   noOfBathrooms: number;
   floorNo: string;
-  totalFloors: number;
   noOfCoveredParking: number;
   noOfOpenParking: number;
 
@@ -30,4 +43,13 @@ export interface Property {
   // TODO : available from
 
   // TODO : property photos
+}
+
+export interface UnitConfiguration{
+  carpetArea1: number;
+  carpetArea2: number;
+  floorPlan: string;
+  price1: number;
+  price2: number;
+  unitType: string;
 }

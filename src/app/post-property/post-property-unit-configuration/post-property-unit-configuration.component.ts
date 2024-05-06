@@ -21,14 +21,14 @@ export class PostPropertyUnitConfigurationComponent extends FormComponent implem
 
   override initFormFields(): void {
     this.form = this.fb.group({
-      inputsArray: this.fb.array([
+      unitConfigurations: this.fb.array([
         this.createInputGroup()
       ])
     });
   }
 
-  get inputsArray() {
-    return this.form.get('inputsArray') as FormArray;
+  get unitConfigurations() {
+    return this.form.get('unitConfigurations') as FormArray;
   }
 
   createInputGroup(): FormGroup {
@@ -43,11 +43,11 @@ export class PostPropertyUnitConfigurationComponent extends FormComponent implem
   }
 
   addFields() {
-    this.inputsArray.push(this.createInputGroup());
+    this.unitConfigurations.push(this.createInputGroup());
   }
 
   removeFields(index: number) {
-    this.inputsArray.removeAt(index);
+    this.unitConfigurations.removeAt(index);
   }
 
   onSubmit() {
@@ -61,7 +61,7 @@ export class PostPropertyUnitConfigurationComponent extends FormComponent implem
     //after submitting all values will be available using this
     console.log('Form submitted:', this.form.value);
 
-   this.router.navigateByUrl('/post-property-more-details');
+   this.router.navigateByUrl('/post-property-photos');
   }
 
   ngOnDestroy(): void {

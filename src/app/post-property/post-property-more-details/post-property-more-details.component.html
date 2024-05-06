@@ -5,26 +5,23 @@
       <div class="row pt-5 pt-lg-3">
         <div class="col-12 col-lg-10">
 
-          <form action="#" method="post" (ngSubmit)="onSave(property);" [formGroup]="form"
+          <form action="#" method="post" (ngSubmit)="onFinalSubmit(property);" [formGroup]="form"
                 class="card border-light p-4 p-lg-5 mb-4">
-            <p class="font-weight-bold text-danger" *ngIf="errorMsg"><i class="fas fa-exclamation-circle fa-lg"
-                                                                        style="color: #be2837"></i><span
-              class="pl-2">{{errorMsg}}</span>
-            </p>
             <div class="form-group ">
-              <a [routerLink]="['/post-property-unit-configuration']" class="text-secondary font-small"
+              <a [routerLink]="['/post-property-photos']" class="text-secondary font-small"
               ><i class="fas fa-arrow-left fa-lg"></i> <span class="pl-3 fa-lg font-weight-bold">Back</span>
               </a>
             </div>
-            <h3>Step 4: Select Amenities</h3>
+            <p class="font-weight-bold text-danger" *ngIf="errorMsg"><fa-icon [icon]="faExclamationCircle"></fa-icon><span
+              class="pl-2">{{errorMsg}}</span>
+            </p>
+            <h3>Step 5: Select Amenities</h3>
             <p class="lead ">Select amenities by clicking on each amenity</p>
 
             <div class="row">
               <div class="col-12 col-lg-7">
 
                 <div class="form-group">
-<!--                  <div class="label">Amenities</div>-->
-<!--                  <p>Select amenities by clicking on each amenity</p>-->
 
                     <div class="icon-container">
                       <div *ngFor="let amenity of CONSTANTS.amenities">

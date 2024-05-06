@@ -16,8 +16,8 @@
             <p class="lead ">Add multiple unit types by clicking Add more units link</p>
             <div class="row">
               <div class="col-12 col-lg-7">
-                <ng-container formArrayName="inputsArray">
-                  <ng-container *ngFor="let group of inputsArray.controls; let i = index" [formGroupName]="i">
+                <ng-container formArrayName="unitConfigurations">
+                  <ng-container *ngFor="let group of unitConfigurations.controls; let i = index" [formGroupName]="i">
                     <p>Unit configuration {{i + 1}}
                       <a *ngIf="i >= 1" class="text-secondary font-small" (click)="removeFields(i)">
                         <fa-icon [icon]="faMinusCircle"></fa-icon>
@@ -75,7 +75,7 @@
 
                     </div>
 
-                    <hr *ngIf="i !== inputsArray.length - 1">
+                    <hr *ngIf="i !== unitConfigurations.length - 1">
                   </ng-container>
 
                 </ng-container>

@@ -44,8 +44,9 @@ const routes: Routes = [
   {path: 'post-property-details', component: PostPropertyDetailsComponent},
   {path: 'post-property-location', component: PostPropertyLocationComponent},
   {path: 'post-property-unit-configuration', component: PostPropertyUnitConfigurationComponent},
-  {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
   {path: 'post-property-photos', component: PostPropertyPhotosComponent},
+  {path: 'post-property-more-details', component: PostPropertyMoreDetailsComponent},
+
   {path: 'post-property-pricing-plan', component: PostPropertyPricingPlanComponent},
   {path: 'thank-you', component: ThankYouComponent},
   {

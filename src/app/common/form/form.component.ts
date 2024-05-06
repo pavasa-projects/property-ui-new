@@ -97,6 +97,30 @@ export abstract class FormComponent implements OnInit {
 
   }
 
+  onFinalSubmit(originalProperty: Property): void {
+    const property: Property = {...originalProperty, ...this.form.value};
+    this.setCustomPropertyInStore(property);
+    // TODO call on last page only
+    if (this.dataService) {
+      this.dataService.addProperty(property).subscribe(
+        // @ts-ignore
+        (insertedProperty => {
+          console.log('inserted id ==> ' + insertedProperty.societyName);
+          this.store.dispatch(PropertyStateActions.setCurrentProperty({property: insertedProperty}));
+          this.navigateNextPageOnSuccess();
+        }),
+        // @ts-ignore
+        (error => {
+          console.log("first");
+          console.log(error.error);
+          this.errorMsg = "Error while submitting property details, please try after some time";
+          this.form.markAsDirty();
+        })
+      );
+    }
+
+  }
+
   protected setCustomPropertyInStore(property: Property): void {
   }
 

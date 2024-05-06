@@ -1,13 +1,12 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, Validators} from "@angular/forms";
+import { FormBuilder} from "@angular/forms";
 import {AppState} from "../../state/app.state";
 import {DataService} from "../../service/data.service";
 import {Store} from "@ngrx/store";
 import {Router} from "@angular/router";
 import {NgbDatepickerConfig, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 import {FormComponent} from "../../common/form/form.component";
-import {faPersonWalking, faSwimmingPool} from "@fortawesome/free-solid-svg-icons";
-import {IconProp} from "@fortawesome/fontawesome-svg-core";
+import {faExclamationCircle} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-post-property-more-details',
@@ -19,10 +18,9 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
   selectedIcons: string[] = [];
 
 
-
   constructor(private fb: FormBuilder, private router: Router,
               private config: NgbDatepickerConfig, store: Store<AppState>,
-               el: ElementRef,  dataService: DataService) {
+              el: ElementRef, dataService: DataService) {
     super(store, dataService);
     const current = new Date();
     config.minDate = {
@@ -33,18 +31,17 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
   }
 
   override initFormFields(): void {
-    this.form = this.fb.group({
-    });
+    this.form = this.fb.group({});
   }
 
   navigateNextPageOnSuccess(): void {
-    this.router.navigateByUrl('/post-property-photos');
+    this.router.navigateByUrl('/thank-you');
   }
 
 
   onIconSelected(selectedIcon: string) {
-    console.log("selecte --- "+ selectedIcon)
-    const index = this.selectedIcons.findIndex(icon => icon ==selectedIcon);
+    console.log("select --- " + selectedIcon)
+    const index = this.selectedIcons.findIndex(icon => icon == selectedIcon);
     console.log(index);
     // console.log("before --"+ this.selectedIcons);
     if (index === -1) {
@@ -57,12 +54,13 @@ export class PostPropertyMoreDetailsComponent extends FormComponent implements O
   }
 
 
-
   validateSelection() {
     if (this.selectedIcons.length > 0) {
       this.form.controls['icons'].setErrors(null);
     } else {
-      this.form.controls['icons'].setErrors({ 'required': true });
+      this.form.controls['icons'].setErrors({'required': true});
     }
   }
+
+  protected readonly faExclamationCircle = faExclamationCircle;
 }

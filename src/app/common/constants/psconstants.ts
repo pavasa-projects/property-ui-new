@@ -48,6 +48,8 @@ export const PS_CONSTANTS = {
   floorNumbers: [...Array(150)].map((_, i) => i),
   furnishingStatuses: ['Furnished', 'Semi-Furnished', 'UnFurnished'],
   budgets: [...Array(150)].map((_, i) => (i + 1) * 5000),
+  futureYears: [2024, 2025, 2026, 2027],
+  months: ['January', 'February', 'March', 'April', 'May', 'June'],
 
   amenities: [
     {icon: faTree, icon_text: "Park"},

@@ -92,19 +92,22 @@
                   </div>
                 </div>
 
+
                 <div class="form-group">
-                  <label for="possessionDate">Possession Date</label>
+                  <label for="possessionDateMonth">Possession Date:</label>
+                  <div class="grid-container">
+                    <select class="form-control" id="possessionDateMonth" formControlName="possessionDateMonth">
+                      <option value="" disabled>Month</option>
+                      <option *ngFor="let month of CONSTANTS.months"
+                              [ngValue]="month">{{month}}</option>
+                    </select>
 
-                  <div class="input-group mb-lg-0">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
-                    </div>
-                    <input class="form-control datepicker" id="possessionDate" [(ngModel)]="dateModel"
-                           [ngModelOptions]="{standalone: true}" ngbDatepicker
-                           #d="ngbDatepicker" (click)="d.toggle()" placeholder="DD/MM/YYYY" type="text"
-                           data-position="top">
+                    <select class="form-control" id="possessionDateYear" formControlName="possessionDateYear">
+                      <option value="" disabled>Year</option>
+                      <option *ngFor="let year of CONSTANTS.futureYears"
+                              [ngValue]="year">{{year}}</option>
+                    </select>
                   </div>
-
                 </div>
 
                 <div class="form-group pt-4">
